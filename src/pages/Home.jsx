@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import GalleryCard from '../components/GalleryCard';
+import data from '../data/artworks.json';
 
 function Home() {
   useEffect(() => {
@@ -79,14 +80,16 @@ function Home() {
         <div className="hero-content text-center relative z-10">
           <div className="max-w-3xl fade-in">
             <div className="mb-6">
-              <span className="badge badge-primary badge-lg">Portfolio 2024</span>
+              <span className="badge badge-primary badge-lg">{data.hero.badge}</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
-              Bienvenue dans mon
-              <span className="block" style={{ background: 'linear-gradient(to right, #3b82f6, #a855f7)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>univers artistique</span>
+              {data.hero.title}
+              <span className="block" style={{ background: 'linear-gradient(to right, #3b82f6, #a855f7)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
+                {data.hero.titleGradient}
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-gray mb-8 max-w-2xl mx-auto">
-              Découvrez une collection unique de peintures et dessins originaux, créés avec passion et authenticité.
+              {data.hero.description}
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a href="#gallery" className="btn btn-primary btn-lg gap-2">
@@ -113,12 +116,7 @@ function Home() {
       <section id="stats" className="py-20 bg-base-200">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { value: '50+', label: 'Œuvres créées' },
-              { value: '3', label: 'Expositions' },
-              { value: '100%', label: 'Passion' },
-              { value: '2024', label: 'Année active' },
-            ].map((stat, index) => (
+            {data.stats.map((stat, index) => (
               <div key={index} className="stat-card fade-in" style={{ transitionDelay: `${index * 0.1}s` }}>
                 <div className="text-5xl font-bold text-primary mb-2">{stat.value}</div>
                 <div className="text-blue-gray">{stat.label}</div>
@@ -132,9 +130,9 @@ function Home() {
       <section id="gallery" className="py-24 bg-base-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 fade-in">
-            <h2 className="text-5xl font-black mb-4">Ma Galerie</h2>
+            <h2 className="text-5xl font-black mb-4">{data.gallery.title}</h2>
             <p className="text-xl text-blue-gray max-w-2xl mx-auto">
-              Une sélection de mes meilleures créations, entre peinture et dessin
+              {data.gallery.subtitle}
             </p>
           </div>
 
@@ -153,48 +151,16 @@ function Home() {
 
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <GalleryCard
-              title="Abstraction Cosmique"
-              type="paintings"
-              description="Acrylique sur toile • 80x100cm • 2024"
-              gradient="bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900"
-              icon={paintIcon}
-            />
-            <GalleryCard
-              title="Portrait Émotion"
-              type="drawings"
-              description="Fusain sur papier • 40x50cm • 2024"
-              gradient="bg-gradient-to-br from-gray-800 via-gray-900 to-black"
-              icon={drawIcon}
-            />
-            <GalleryCard
-              title="Ville au Crépuscule"
-              type="paintings"
-              description="Huile sur toile • 70x90cm • 2024"
-              gradient="bg-gradient-to-br from-amber-700 via-orange-800 to-red-900"
-              icon={paintIcon}
-            />
-            <GalleryCard
-              title="Anatomie Gestuelle"
-              type="drawings"
-              description="Crayon graphite • 30x40cm • 2024"
-              gradient="bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900"
-              icon={drawIcon}
-            />
-            <GalleryCard
-              title="Nature Abstraite"
-              type="paintings"
-              description="Aquarelle • 50x70cm • 2024"
-              gradient="bg-gradient-to-br from-emerald-700 via-teal-800 to-cyan-900"
-              icon={paintIcon}
-            />
-            <GalleryCard
-              title="Architecture Minimale"
-              type="drawings"
-              description="Encre de Chine • 30x40cm • 2024"
-              gradient="bg-gradient-to-br from-zinc-700 via-zinc-800 to-zinc-900"
-              icon={drawIcon}
-            />
+            {data.artworks.map((artwork) => (
+              <GalleryCard
+                key={artwork.id}
+                title={artwork.title}
+                type={artwork.type}
+                description={artwork.description}
+                gradient={artwork.gradient}
+                icon={artwork.type === 'paintings' ? paintIcon : drawIcon}
+              />
+            ))}
           </div>
         </div>
       </section>

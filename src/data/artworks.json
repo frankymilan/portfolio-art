@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "title": "Bienvenue dans mon",
+    "titleGradient": "univers artistique",
+    "description": "Découvrez une collection unique de peintures et dessins originaux, créés avec passion et authenticité.",
+    "badge": "Portfolio 2024"
+  },
+  "stats": [
+    { "value": "50+", "label": "Œuvres créées" },
+    { "value": "3", "label": "Expositions" },
+    { "value": "100%", "label": "Passion" },
+    { "value": "2024", "label": "Année active" }
+  ],
+  "gallery": {
+    "title": "Ma Galerie",
+    "subtitle": "Une sélection de mes meilleures créations, entre peinture et dessin"
+  },
+  "artworks": [
+    {
+      "id": 1,
+      "title": "Abstraction Cosmique",
+      "type": "paintings",
+      "description": "Acrylique sur toile • 80x100cm • 2024",
+      "gradient": "bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900"
+    },
+    {
+      "id": 2,
+      "title": "Portrait Émotion",
+      "type": "drawings",
+      "description": "Fusain sur papier • 40x50cm • 2024",
+      "gradient": "bg-gradient-to-br from-gray-800 via-gray-900 to-black"
+    },
+    {
+      "id": 3,
+      "title": "Ville au Crépuscule",
+      "type": "paintings",
+      "description": "Huile sur toile • 70x90cm • 2024",
+      "gradient": "bg-gradient-to-br from-amber-700 via-orange-800 to-red-900"
+    },
+    {
+      "id": 4,
+      "title": "Anatomie Gestuelle",
+      "type": "drawings",
+      "description": "Crayon graphite • 30x40cm • 2024",
+      "gradient": "bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900"
+    },
+    {
+      "id": 5,
+      "title": "Nature Abstraite",
+      "type": "paintings",
+      "description": "Aquarelle • 50x70cm • 2024",
+      "gradient": "bg-gradient-to-br from-emerald-700 via-teal-800 to-cyan-900"
+    },
+    {
+      "id": 6,
+      "title": "Architecture Minimale",
+      "type": "drawings",
+      "description": "Encre de Chine • 30x40cm • 2024",
+      "gradient": "bg-gradient-to-br from-zinc-700 via-zinc-800 to-zinc-900"
+    }
+  ]
+}
